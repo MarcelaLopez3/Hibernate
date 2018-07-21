@@ -7,7 +7,7 @@ import com.udb.entity.Materia;
 public interface IMateriaDAO {
 	public Materia addMateria(Materia materia);
 	public Materia updateMateria(Materia materia);
-	public Materia getCliente(long id);
+	public Materia getMateria(long id);
 	public void deleteMateria(long id);
 	public List<Materia> getMaterias();
 }

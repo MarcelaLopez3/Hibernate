@@ -48,7 +48,7 @@ public class EstudianteServiceImpl implements IEstudianteService{
 	}
 
 	@Override
-	public Estudiante getCliente(long id) {
+	public Estudiante getEstudiante(long id) {
 		// TODO Auto-generated method stub
 		return estudianteDAO.getCliente(id);
 	}

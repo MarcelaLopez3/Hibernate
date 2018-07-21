@@ -31,7 +31,7 @@ public class MateriaDAOImpl implements IMateriaDAO {
 	}
 
 	@Override
-	public Materia getCliente(long id) {
+	public Materia getMateria(long id) {
 		String sql = "select materia from Materia materia where materia.id=" + id;
 		try{
 			return (Materia) entityManager.createQuery(sql).getSingleResult();

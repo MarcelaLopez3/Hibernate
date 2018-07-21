@@ -35,7 +35,7 @@ public class MateriaController
 	public ModelAndView getClientes(){
 		
 		ModelAndView model  = new ModelAndView("materias");
-		List<Materia> listaMaterias = materiaService.getProductos();
+		List<Materia> listaMaterias = materiaService.getMaterias();
 		model.addObject("materias", listaMaterias);
 		return model;
 		
@@ -45,7 +45,7 @@ public class MateriaController
 	public ModelAndView getEditarMateriaForm(@PathVariable("idMateria") String idMateria){
 		
 		ModelAndView model  = new ModelAndView("editarMateria");
-		Materia materia = materiaService.getProducto(Long.parseLong(idMateria));
+		Materia materia = materiaService.getMateria(Long.parseLong(idMateria));
 		model.addObject("materia", materia);
 		return model;
 		
@@ -58,10 +58,13 @@ public class MateriaController
 		model.setViewName("materias");
 		String id = request.getParameter("id");
 		String nombreMateria = request.getParameter("nombreMateria");
+		String descripcionMateria = request.getParameter("descripcionMateria");
+		String horasMateria = request.getParameter("horasMateria");
+		String uvMateria = request.getParameter("uvMateria");
 		
-		Materia producto = materiaService.updateProducto(Long.parseLong(id), nombreMateria);
-		if(producto!=null){
-			model.addObject("exito", "Materia actualizado exitosamente :"+producto.getNombreMateria());
+		Materia materia = materiaService.updateMateria(Long.parseLong(id), nombreMateria,descripcionMateria,horasMateria,uvMateria);
+		if(materia!=null){
+			model.addObject("exito", "Materia actualizado exitosamente ");
 		}else{
 			model.addObject("error", "Ha ocurrido un error al actualizar la Materia");
 		}
@@ -77,14 +80,17 @@ public class MateriaController
 		ModelAndView model = new ModelAndView();
 		model.setViewName("materias");
 		String nombreMateria = request.getParameter("nombreMateria");
+		String descripcionMateria = request.getParameter("descripcionMateria");
+		String horasMateria = request.getParameter("horasMateria");
+		String uvMateria = request.getParameter("uvMateria");
 		
-		Materia materia = materiaService.addProducto(nombreMateria);
+		Materia materia = materiaService.addMateria(nombreMateria,descripcionMateria,horasMateria,uvMateria);
 		if(materia!=null){
-			model.addObject("exito", "materia actualizado exitosamente :"+materia.getNombreMateria());
+			model.addObject("exito", "materia actualizado exitosamente ");
 		}else{
 			model.addObject("error", "Ha ocurrido un error al actualizar el materia");
 		}
-		List<Materia> listaMaterias = materiaService.getProductos();
+		List<Materia> listaMaterias = materiaService.getMaterias();
 		model.addObject("materias", listaMaterias);
 		
 		return model;

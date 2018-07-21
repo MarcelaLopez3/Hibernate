@@ -82,9 +82,9 @@ public class EstudianteController
 		String edad = request.getParameter("edad");
 		String carnet = request.getParameter("carnet");
 		
-		Estudiante estudiante = estudianteService.addCliente(nombres, apellidos, edad, carnet);
+		Estudiante estudiante = estudianteService.addEstudiante(nombres, apellidos, edad, carnet);
 		if(estudiante!=null){
-			model.addObject("exito", "Estudiante actualizado exitosamente :"+estudiante.getNombre());
+			model.addObject("exito", "Estudiante actualizado exitosamente ");
 		}else{
 			model.addObject("error", "Ha ocurrido un error al actualizar el cliente");
 		}
