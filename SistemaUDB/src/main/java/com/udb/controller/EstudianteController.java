@@ -29,7 +29,7 @@ public class EstudianteController
 		return "redirect:estudiantes.html";
 	}
 	
-	@GetMapping("/estudiantes")
+	@GetMapping("/estudiante")
 	public ModelAndView getEstudiantes(){
 		
 		ModelAndView model  = new ModelAndView("estudiantes");

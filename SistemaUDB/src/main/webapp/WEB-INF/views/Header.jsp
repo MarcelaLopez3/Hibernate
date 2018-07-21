@@ -28,8 +28,8 @@
 			<nav id="menu">
 				<ul class="links">
 					<li><a href="<%=contextPath%>/inicio.html">Inicio</a></li>
-					<li><a href="elements.html">Elements</a></li>
-					<li><a href="generic.html">Generic</a></li>
+					<li><a href="<%=contextPath%>/estudiante/agregarEstudiante.html">Estudiante</a></li>
+					<li><a href="<%=contextPath%>/materia/agregarMateria.html">Materia</a></li>
 				</ul>
 			</nav>
 	
