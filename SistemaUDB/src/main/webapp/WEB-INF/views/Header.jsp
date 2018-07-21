@@ -18,7 +18,7 @@
 
 		<!-- Header -->
 			<header id="header">
-				<a class="logo" href="index.html">Sistema UDB</a>
+				<a class="logo"  href="<%=contextPath%>/inicio.html">Sistema UDB</a>
 				<nav>
 					<a href="#menu">Menu</a>
 				</nav>
