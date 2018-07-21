@@ -52,8 +52,9 @@ public class EstudianteController
 	@RequestMapping(value="/editarEstudianteProceso",method=RequestMethod.POST)
 	public ModelAndView editarEstudiante(HttpServletRequest request,HttpServletResponse response){
 		
+		System.out.println("entrando...");
 		ModelAndView model = new ModelAndView();
-		model.setViewName("estudiantes");
+		model.setViewName("estudiante");
 		String id = request.getParameter("id");
 		String nombres = request.getParameter("nombres");
 		String apellidos = request.getParameter("apellidos");
@@ -68,6 +69,7 @@ public class EstudianteController
 		}
 		List<Estudiante> listaEstudiantes = estudianteService.getEstudiantes();
 		model.addObject("estudiantes", listaEstudiantes);
+		System.out.println("saliendo...");
 		return model;
 		
 	}
@@ -76,7 +78,7 @@ public class EstudianteController
 	public ModelAndView agregarEstudiante(HttpServletRequest request,HttpServletResponse response){
 		
 		ModelAndView model = new ModelAndView();
-		model.setViewName("estudiantes");
+		model.setViewName("estudiante");
 		String nombres = request.getParameter("nombres");
 		String apellidos = request.getParameter("apellidos");
 		String edad = request.getParameter("edad");

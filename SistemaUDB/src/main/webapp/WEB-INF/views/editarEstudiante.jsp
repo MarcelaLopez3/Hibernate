@@ -6,7 +6,7 @@
   <div class="row">
   	<div class="col-md-8 offset-md-3">
   			  <h2>Editando al estudiante: ${estudiante.nombre }</h2>
-			<form class="form-horizontal"  action="<%=request.getContextPath()%>/estudiante/editarEstudianteProceso.html" method="post" role="form">
+			<form class="form-horizontal"  action="<%=request.getContextPath()%>/estudiante/agregarEstudianteProceso.html" method="post" role="form">
 				<input type="hidden" value="${estudiante.id }"	 name="id" id="id">
 				<div class="form-group">
 					<label for="title">Nombres</label>
